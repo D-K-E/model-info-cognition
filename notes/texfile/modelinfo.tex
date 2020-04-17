@@ -186,7 +186,7 @@ Quelques exemples:
     \centering
     \includegraphics[width=\textwidth]{childLanguagePerception.png}
     \caption{Perception de langage chez nourrissons}
-    \label{fig:synapto}
+    \label{fig:percep}
 \end{figure}
 \end{block}
 \end{column}
@@ -213,7 +213,7 @@ Concepts clés pour un agent informatique \textit{conscient}
     \centering
     \includegraphics[width=\textwidth]{IntelligentAgent-SimpleReflex.png}
     \caption{Structure d'un Agent Simple}
-    \label{fig:synapto}
+    \label{fig:agents}
 \end{figure}
 \end{block}
 \end{column}
@@ -239,7 +239,7 @@ D'où vient le $\to$ ?
     \centering
     \includegraphics[width=\textwidth]{Machine_language.jpeg}
     \caption{Machine et son Milieu}
-    \label{fig:synapto}
+    \label{fig:macmil}
 \end{figure}
 \end{block}
 \end{column}
@@ -266,7 +266,7 @@ D'où vient le $\to$ ?
     \centering
     \includegraphics[width=\textwidth]{Vis_HAL_Mk7.jpg}
     \caption{HAL Mk7}
-    \label{fig:synapto}
+    \label{fig:hal}
 \end{figure}
 \end{block}
 \end{column}
@@ -278,15 +278,15 @@ D'où vient le $\to$ ?
 \centering{En partie, mais non.}
 \end{frame}
 
-\begin{frame}{Comment sais je que je fais du bien}
+\begin{frame}{Où suis je ?}
 \begin{columns}
 \begin{column}{0.6\textwidth}
 \begin{block}{}
 
 \begin{itemize}
     \item État Actuel de Milieu
-    \item État Finale ou le But
-    \item Performance = État Finale - État Actuel
+    \item État Finale ou l'État d'arrêt ou le But
+    \item Mon État = But - État Actuel
 \end{itemize}
 
 \end{block}
@@ -297,12 +297,109 @@ D'où vient le $\to$ ?
     \centering
     \includegraphics[width=\textwidth]{Bharata_Natyam_Performance_DS.jpg}
     \caption{Performance}
-    \label{fig:synapto}
+    \label{fig:perfo}
 \end{figure}
 \end{block}
 \end{column}
 \end{columns}
 \end{frame}
+\note[itemize]{
+  La question est simple est que je suis proche ou loin de mon but. Comment je
+  peux mesurer cela? En prenant la différence de mon but et l'état actuel.
+}
 
+\begin{frame}{Qu'est-ce que je peux faire ?}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\begin{block}{}
+
+Les actions des agents informatiques est déterminé par
+\begin{itemize}
+  \item Les lois de l'environnement
+  \item La capacité de simuler environnement 
+  \item Contraintes techniques de la machine
+\end{itemize}
+
+\end{block}
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{block}{}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{toyotarobot.jpg}
+    \caption{Action}
+    \label{fig:toyota}
+\end{figure}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+\note{
+  Les actions de la machine dépend en partie la bonne évaluation de
+  l'environnement. Cela nécessite une capacité importante: simuler
+  l'environnement autant vrai que possible. La simulation nécessite aussi de
+  savoir les règles de l'environnement. Tout cela implique bien évidemment
+  d'avoir suffisamment de mémoire, de puissance de calcul, d'espace de stockage etc.
+}
+
+\begin{frame}{Comment choisir la direction ? Brute Force - For the Horde!}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \begin{block}{}
+
+        Je sais où suis je et je sais ceux que je peux faire, comment je peux
+        choisir une direction.
+        \begin{itemize}
+        \item Générer des possibles états en fonction des lois d'environnement
+        \item Évaluer chacun en fonction de leur distance au but
+        \item Choisir l'état le plus proche au but
+        \end{itemize}
+
+      \end{block}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{block}{}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{bruteforce.png}
+          \caption{Brute Force Algorithm}
+          \label{fig:brute}
+        \end{figure}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Obstacles}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \begin{block}{}
+
+        J'avais choisi la direction qui me semblait la plus pertinente à
+        l'époque, mais je me suis trouvé dans un impasse, qu'est-ce que je dois faire?
+        \begin{itemize}
+        \item Donner un coût qui s'exprime par distance aux impasses
+        \item Garder chaque état généré sous un forme de chemin
+        \item Tirer les chemins en fonction de la distance totale au but
+        \end{itemize}
+
+      \end{block}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{block}{}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{robotwall.png}
+          \caption{La mure et le robot}
+          \label{fig:robowall}
+        \end{figure}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Implémentation d'un Agent Simple}
+Après la pause de 10 min.
+\end{frame}
 
 \end{document}
